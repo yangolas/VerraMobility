@@ -5,12 +5,12 @@ namespace Prueba2.Application.Mappers;
 
 public static class Mapper_Resultado2Repository_Domain
 {
-    public static Resultado2 MapToRepository(Entity entity)
-    {
-        return new Resultado2()
-        {
-            Id = entity.Id,
-            Description = entity.ParametroString
-        };
-    }
+    //public static Resultado2 MapToRepository(Order order)
+    //{
+    //    return new Resultado2()
+    //    {
+    //        Id = order.Id,
+    //        Description = order.ParametroString
+    //    };
+    //}
 }

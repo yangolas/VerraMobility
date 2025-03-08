@@ -7,7 +7,6 @@ using Prueba1.Presentation;
 using Prueba1.Repository;
 using Prueba1.Shared.Settings;
 using Prueba2.Application;
-using Prueba2.Application.Models;
 using Prueba2.Domain;
 
 var builder = new ConfigurationBuilder()
@@ -37,11 +36,15 @@ ExecuteUseCase.Initialize(host.Services);
 
 await ExecuteUseCase.ExecutePrueba1();
 
-await ExecuteUseCase.ExecutePrueba2(new Prueba2Dto()
-{
-    ParametroInt = 1,
-    ParametroString = "example"
-});
+ExecuteUseCase.ExecutePrueba2(
+    new List<string> 
+    {
+        "3",
+        "1,1,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
+        "22,1,elmer@fudd.com,123 Sesame St.,New York,NY,10011,10987654321",
+        "3,2,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
+    }
+);
 
 await host.StopAsync();
 await host.WaitForShutdownAsync();

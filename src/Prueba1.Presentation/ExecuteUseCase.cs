@@ -26,13 +26,13 @@ public static class ExecuteUseCase
         await useCase.TextProcess();
     }
 
-    public static async Task ExecutePrueba2(Prueba2Dto prueba2Dto)
+    public static void ExecutePrueba2(IEnumerable<string> inlineOrders)
     {
         if (_serviceProvider is null)
             throw new ArgumentNullException(_initializeText);
 
         IUseCase2 useCase2 = _serviceProvider.GetRequiredService<IUseCase2>();
 
-        await useCase2.ExecutePrueba2(prueba2Dto);
+        useCase2.ExecutePrueba2(inlineOrders);
     }
 }
