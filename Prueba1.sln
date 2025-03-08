@@ -43,17 +43,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba2.Domain", "src\Prueb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A6F0012-E27A-4988-8054-4D808673B2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba1.Application.Test", "src\Prueba1.Application.Test\Prueba1.Application.Test.csproj", "{5FEF2FFF-E22F-423D-92F5-4456D5986C68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba1.Application.Test", "src\Prueba1.Application.Test\Prueba1.Application.Test.csproj", "{5FEF2FFF-E22F-423D-92F5-4456D5986C68}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9195E169-8A57-4812-B28A-B35BF2AC46DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba2.Application.Test", "src\Prueba2.Application.Test\Prueba2.Application.Test.csproj", "{197C98B7-AFB0-4C53-BA43-1CF572454239}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba2.Application.Test", "src\Prueba2.Application.Test\Prueba2.Application.Test.csproj", "{197C98B7-AFB0-4C53-BA43-1CF572454239}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0E38A15F-B916-4976-96E7-4BE24B1D0DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba1.Domain.Test", "src\Prueba1.Domain.Test\Prueba1.Domain.Test.csproj", "{0E556D24-751B-4894-AE2E-B1D7484AD1E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba1.Domain.Test", "src\Prueba1.Domain.Test\Prueba1.Domain.Test.csproj", "{0E556D24-751B-4894-AE2E-B1D7484AD1E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba2.Domain.Test", "src\Prueba2.Domain.Test\Prueba2.Domain.Test.csproj", "{ECCB8311-38D1-4A88-A316-C524090A390C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prueba2.Domain.Test", "src\Prueba2.Domain.Test\Prueba2.Domain.Test.csproj", "{ECCB8311-38D1-4A88-A316-C524090A390C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba1.ReaderTxt", "src\Prueba1.ReaderTxt\Prueba1.ReaderTxt.csproj", "{A6DF3115-F575-4C06-ACD9-7B3A26A0BA9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{ECCB8311-38D1-4A88-A316-C524090A390C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECCB8311-38D1-4A88-A316-C524090A390C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECCB8311-38D1-4A88-A316-C524090A390C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DF3115-F575-4C06-ACD9-7B3A26A0BA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DF3115-F575-4C06-ACD9-7B3A26A0BA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DF3115-F575-4C06-ACD9-7B3A26A0BA9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DF3115-F575-4C06-ACD9-7B3A26A0BA9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -155,6 +161,7 @@ Global
 		{0E38A15F-B916-4976-96E7-4BE24B1D0DD1} = {C29B931A-7A1E-4691-9B94-C274D62E38F8}
 		{0E556D24-751B-4894-AE2E-B1D7484AD1E3} = {0E38A15F-B916-4976-96E7-4BE24B1D0DD1}
 		{ECCB8311-38D1-4A88-A316-C524090A390C} = {0E38A15F-B916-4976-96E7-4BE24B1D0DD1}
+		{A6DF3115-F575-4C06-ACD9-7B3A26A0BA9A} = {773F0DD2-FF2D-493F-8103-614555400835}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4964367D-F99A-4137-ACD8-EFE10D01C9B2}

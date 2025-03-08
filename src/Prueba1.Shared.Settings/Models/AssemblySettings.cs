@@ -2,6 +2,7 @@
 
 public class AssemblySettings
 {
+    public string AssemblyReaderTxt { get; set; } = null!;
     public string AssemblyApplication { get; set; } = null!;
     public string AssemblyApplication2 { get; set; } = null!;
     public string AssemblyDomain { get; set; } = null!;

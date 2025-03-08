@@ -17,13 +17,13 @@ public static class ExecuteUseCase
         _serviceProvider = scope.ServiceProvider;
     }
 
-    public static async Task ExecutePrueba1(Prueba1Dto prueba1Dto)
+    public static async Task ExecutePrueba1()
     {
         if(_serviceProvider is null)
             throw new ArgumentNullException(_initializeText);
         IUseCase useCase = _serviceProvider.GetRequiredService<IUseCase>();
 
-        await useCase.ExecutePrueba1(prueba1Dto);
+        await useCase.TextProcess();
     }
 
     public static async Task ExecutePrueba2(Prueba2Dto prueba2Dto)

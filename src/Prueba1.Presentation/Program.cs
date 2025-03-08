@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Prueba1.Application;
-using Prueba1.Application.Model;
 using Prueba1.Domain;
 using Prueba1.Presentation;
 using Prueba1.Repository;
@@ -23,6 +22,8 @@ AppSettings config = configurationSection.Get<AppSettings>()!;
 
 IServiceCollection servicesHost = new ServiceCollection();
 servicesHost.Configure<AppSettings>(configurationSection);
+servicesHost.AddReaderTxtService(config.Assembly.AssemblyReaderTxt);
+servicesHost.AddApplicationService(config.Assembly.AssemblyApplication);
 servicesHost.AddApplicationService(config.Assembly.AssemblyApplication);
 servicesHost.AddApplication2Service(config.Assembly.AssemblyApplication2);
 servicesHost.AddDomainService(config.Assembly.AssemblyDomain);
@@ -34,11 +35,7 @@ IHost host = ConfigHost.CreateIocInHost(servicesHost);
 
 ExecuteUseCase.Initialize(host.Services);
 
-await ExecuteUseCase.ExecutePrueba1(new Prueba1Dto()
-{
-    ParametroInt = 1,
-    ParametroString = "example"
-});
+await ExecuteUseCase.ExecutePrueba1();
 
 await ExecuteUseCase.ExecutePrueba2(new Prueba2Dto()
 {

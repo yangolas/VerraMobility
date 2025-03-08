@@ -55,7 +55,7 @@ namespace Prueba1.Application.Test
             );
 
             //act
-            await _sut.ExecutePrueba1(request);
+            await _sut.TextProcess(request);
 
             //Assert
             Resultado resultado = sqlServerContext.Resultados.First();

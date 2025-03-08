@@ -6,7 +6,6 @@ namespace Prueba1.Shared.Settings;
 public class AppSettings
 {
     public DatabaseSettings Database { get; set; } = null!;
-
     public AssemblySettings Assembly { get; set; } = null!;
-
+    public ReaderTxtSettings ReaderTxt { get; set; } = null!;
 }
