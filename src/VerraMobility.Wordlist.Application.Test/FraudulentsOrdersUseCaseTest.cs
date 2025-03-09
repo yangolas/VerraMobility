@@ -1,19 +1,14 @@
 namespace Prueba1.Application.Test
 {
-    public class Prueba1UseCaseTest
+    public class FraudulentsOrdersUseCaseTest
     {
         private readonly string ParametroString = "this is an example";
         //private UseCase _sut = null!;
 
         [Fact]
-        public async Task ShouldCreateAPrueba2RequiredACorrectPrueba2Dto()
+        public async Task ShouldDetectedFraudulentOperationsRequiredDiferentsEmails()
         {
-            ////Arrange
-            //Prueba1Dto request = new()
-            //{
-            //    ParametroInt = 1,
-            //    ParametroString = "this is an example",
-            //};
+           
 
 
             //Mock<ILogger<UseCase>> mockLogger = new();

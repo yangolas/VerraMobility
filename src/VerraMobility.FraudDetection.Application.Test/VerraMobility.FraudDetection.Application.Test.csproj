@@ -20,6 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VerraMobility.FraudDetection.Application\VerraMobility.FraudDetection.Application.csproj" />
+    <ProjectReference Include="..\VerraMobility.FraudDetection.Domain\VerraMobility.FraudDetection.Domain.csproj" />
     <ProjectReference Include="..\VerraMobility.Infraestructure.Repository\VerraMobility.Infraestructure.Repository.csproj" />
   </ItemGroup>
 

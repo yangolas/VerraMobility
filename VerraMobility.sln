@@ -31,8 +31,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerraMobility.Infraestructu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerraMobility.Infraestructure.Repository", "src\VerraMobility.Infraestructure.Repository\VerraMobility.Infraestructure.Repository.csproj", "{2E69AFAE-4BBB-4206-BD6D-7A5DE3C7D214}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerraMobility.FraudDetection.Domain.Test", "src\VerraMobility.FraudDetection.Domain.Test\VerraMobility.FraudDetection.Domain.Test.csproj", "{10D674AD-A609-4367-816D-66AA1B262F91}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerraMobility.FraudDetection.Application.Test", "src\VerraMobility.FraudDetection.Application.Test\VerraMobility.FraudDetection.Application.Test.csproj", "{2D9CF9A5-4A77-40ED-9CC5-9989FA9BE67E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerraMobility.Wordlist.Application.Test", "src\VerraMobility.Wordlist.Application.Test\VerraMobility.Wordlist.Application.Test.csproj", "{3EF473BD-73F5-4195-A96F-9EB674E6C570}"
@@ -75,10 +73,6 @@ Global
 		{2E69AFAE-4BBB-4206-BD6D-7A5DE3C7D214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E69AFAE-4BBB-4206-BD6D-7A5DE3C7D214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E69AFAE-4BBB-4206-BD6D-7A5DE3C7D214}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10D674AD-A609-4367-816D-66AA1B262F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10D674AD-A609-4367-816D-66AA1B262F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10D674AD-A609-4367-816D-66AA1B262F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10D674AD-A609-4367-816D-66AA1B262F91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D9CF9A5-4A77-40ED-9CC5-9989FA9BE67E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D9CF9A5-4A77-40ED-9CC5-9989FA9BE67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D9CF9A5-4A77-40ED-9CC5-9989FA9BE67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -110,7 +104,6 @@ Global
 		{4CE0D0E7-FA62-4A06-81A9-A6CC2D7326E2} = {C912704D-AC3E-4A5C-828C-EE4538658FB2}
 		{5292BEF5-B469-4ABD-B367-CF7052D21DCD} = {773F0DD2-FF2D-493F-8103-614555400835}
 		{2E69AFAE-4BBB-4206-BD6D-7A5DE3C7D214} = {773F0DD2-FF2D-493F-8103-614555400835}
-		{10D674AD-A609-4367-816D-66AA1B262F91} = {9195E169-8A57-4812-B28A-B35BF2AC46DE}
 		{2D9CF9A5-4A77-40ED-9CC5-9989FA9BE67E} = {9195E169-8A57-4812-B28A-B35BF2AC46DE}
 		{3EF473BD-73F5-4195-A96F-9EB674E6C570} = {2A6F0012-E27A-4988-8054-4D808673B2E6}
 		{31179065-B076-4783-B9AD-D5314AFF51AF} = {2A6F0012-E27A-4988-8054-4D808673B2E6}
