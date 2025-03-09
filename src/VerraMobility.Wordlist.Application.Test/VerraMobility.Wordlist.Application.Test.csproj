@@ -20,7 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VerraMobility.Infraestructure.ReaderFiles\VerraMobility.Infraestructure.ReaderFiles.csproj" />
     <ProjectReference Include="..\VerraMobility.Infraestructure.Repository\VerraMobility.Infraestructure.Repository.csproj" />
+    <ProjectReference Include="..\VerraMobility.Wordlist.Application\VerraMobility.Wordlist.Application.csproj" />
+    <ProjectReference Include="..\VerraMobility.Wordlist.Domain\VerraMobility.Wordlist.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

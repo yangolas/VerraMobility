@@ -18,9 +18,9 @@ public class FraudDetectionUseCase : IFraudDetectionUseCase
         _orderComparerService = orderComparerService;
     }
 
-    public void ExecuteFraudDetection(IEnumerable<string> inlineOrders)
+    public async Task ExecuteFraudDetectionAsync(IEnumerable<string> inlineOrders)
     {
-        IEnumerable<Order> allOrders = Mapper_InlineOrder_Order.MapToDomain(inlineOrders);
+        IEnumerable<Order> allOrders = await Mapper_InlineOrder_Order.MapToDomainAsync(inlineOrders);
         _orderService.LoadOrders(allOrders);
         IEnumerable<Order> ordersValidToProcess = _orderService.GetOrdersValids();
         _orderComparerService.FraudulentCreditCardByAddressIdDeal(ref ordersValidToProcess);

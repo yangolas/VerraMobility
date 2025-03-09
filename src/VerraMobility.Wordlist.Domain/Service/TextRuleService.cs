@@ -5,35 +5,42 @@ namespace VerraMobility.Wordlist.Domain.Service;
 
 public class TextRuleService : ITextRuleService
 {
-    public IEnumerable<WordSummary> GetWordsBtwZeroAndSixLetters(IEnumerable<string> words)
+    private const string InitializeMessage = $"Ey, developer, you must initalize {nameof(TextRuleService)} correctly";
+    private const int _minimumWordLetters = 0;
+    private const int _maximumWordLetters = 6;
+    private IEnumerable<string>? _wordsOneToFive;
+    public async Task LoadWordsBtwOneAndFiveLettersAsync(IEnumerable<string> words)
     {
-        return words
-            .Where(word => word.Length > 0 && word.Length < 6)
-            .Select(word => new WordSummary()
-            {
-                Length = word.Length,
-                Word = word,
-            }
-            );
+        _wordsOneToFive = await Task.Run(() => words
+            .Where(word => word.Length > _minimumWordLetters && word.Length < _maximumWordLetters)
+            .ToList()
+        );
     }
 
-    public IEnumerable<WordValid> GetWordsConcatenatSixLetters(IEnumerable<WordSummary> wordsSummary)
+    public async Task<IEnumerable<WordValid>> GetWordsConcatenatSixLettersAsync()
     {
-        List<WordValid> wordsValid = new();
-        WordSummary[] wordSummaries = wordsSummary.ToArray();
-        int wordCount = wordSummaries.Length;
+        if (_wordsOneToFive is null)
+            throw new ArgumentNullException(InitializeMessage);
 
-        for (int index = 0; index < wordCount - 1; index++)
+        return await Task.Run(() =>
         {
-            for (int subIndex = index + 1; subIndex < wordCount; subIndex++)
+            List<WordValid> wordsValid = new();
+            string[] wordsOneToFive = _wordsOneToFive.ToArray();
+            int wordCount = wordsOneToFive.Length;
+
+            for (int index = 0; index < wordCount - 1; index++)
             {
-                if (wordSummaries[index].Length + wordSummaries[subIndex].Length == 6)
+                for (int subIndex = index + 1; subIndex < wordCount; subIndex++)
                 {
-                    wordsValid.Add(new(wordSummaries[index].Word, wordSummaries[subIndex].Word));
+                    if (wordsOneToFive[index].Length + wordsOneToFive[subIndex].Length == _maximumWordLetters)
+                    {
+                        wordsValid.Add(new WordValid(wordsOneToFive[index], wordsOneToFive[subIndex]));
+                    }
                 }
             }
-        }
 
-        return wordsValid;
+            return wordsValid;
+        });
     }
+
 }

@@ -24,13 +24,13 @@ public static class ExecuteUseCase
         await wordlist.ExceuteWordlist();
     }
 
-    public static void ExecuteFraudDetection(IEnumerable<string> inlineOrders)
+    public async static Task ExecuteFraudDetection(IEnumerable<string> inlineOrders)
     {
         if (_serviceProvider is null)
             throw new ArgumentNullException(_initializeText);
 
         IFraudDetectionUseCase fraudDetectionUseCase = _serviceProvider.GetRequiredService<IFraudDetectionUseCase>();
 
-        fraudDetectionUseCase.ExecuteFraudDetection(inlineOrders);
+        await fraudDetectionUseCase.ExecuteFraudDetectionAsync(inlineOrders);
     }
 }

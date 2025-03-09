@@ -20,8 +20,8 @@ public class WordlistUseCase : IWordlistUseCase
     public async Task ExceuteWordlist()
     {
         IEnumerable<string> words = await _readerFileService.ReadFileTxtByLinesAsync();
-        IEnumerable<WordSummary> wordsSummary = _textRuleService.GetWordsBtwZeroAndSixLetters(words);
-        IEnumerable<WordValid> wordsValid = _textRuleService.GetWordsConcatenatSixLetters(wordsSummary);
+        await _textRuleService.LoadWordsBtwOneAndFiveLettersAsync(words);
+        IEnumerable<WordValid> wordsValid = await _textRuleService.GetWordsConcatenatSixLettersAsync();
         Console.WriteLine($"#############Exercise one############");
         Console.WriteLine($"Found words:{string.Join("\n", wordsValid)}");
     }

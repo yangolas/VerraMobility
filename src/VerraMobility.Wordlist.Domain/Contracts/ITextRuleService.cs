@@ -4,6 +4,7 @@ namespace VerraMobility.Wordlist.Domain.Contracts;
 
 public interface ITextRuleService : ITransientDomainWordlist
 {
-    IEnumerable<WordSummary> GetWordsBtwZeroAndSixLetters(IEnumerable<string> words);
-    IEnumerable<WordValid> GetWordsConcatenatSixLetters(IEnumerable<WordSummary> wordsSummary);
+    Task LoadWordsBtwOneAndFiveLettersAsync(IEnumerable<string> words);
+
+    Task<IEnumerable<WordValid>> GetWordsConcatenatSixLettersAsync();
 }

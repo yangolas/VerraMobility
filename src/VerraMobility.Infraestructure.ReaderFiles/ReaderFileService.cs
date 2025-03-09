@@ -4,10 +4,10 @@ using VerraMobility.Shared.Settings;
 
 namespace VerraMobility.Infraestructure.ReaderFiles;
 
-public class ReaderService : IReaderFileService
+public class ReaderFileService : IReaderFileService
 {
     private readonly string _pathFileTxt;
-    public ReaderService(
+    public ReaderFileService(
         IOptions<AppSettings> options)
     {
         _pathFileTxt = options.Value.ReaderTxt.Path;

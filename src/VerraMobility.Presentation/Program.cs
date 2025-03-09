@@ -36,7 +36,7 @@ ExecuteUseCase.Initialize(host.Services);
 
 await ExecuteUseCase.ExecuteWordlist();
 
-ExecuteUseCase.ExecuteFraudDetection(
+await ExecuteUseCase.ExecuteFraudDetection(
     new List<string> 
     {
         "3",

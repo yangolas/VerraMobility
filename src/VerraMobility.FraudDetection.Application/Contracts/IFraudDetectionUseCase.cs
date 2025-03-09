@@ -2,5 +2,5 @@
 
 public interface IFraudDetectionUseCase : ITransientApplicationFraudDetection
 {
-    void ExecuteFraudDetection(IEnumerable<string> inlineOrders);
+    Task ExecuteFraudDetectionAsync(IEnumerable<string> inlineOrders);
 }

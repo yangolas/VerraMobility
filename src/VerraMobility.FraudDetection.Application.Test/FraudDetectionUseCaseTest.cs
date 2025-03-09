@@ -21,7 +21,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredIncompleteInlineOrder()
+    public async Task ShouldDetectedFraudulentOperationsRequiredIncompleteInlineOrder()
     {
 
         //Arrange
@@ -34,7 +34,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -45,7 +45,7 @@ public class FraudDetectionUseCaseTest
 
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredDiferentsEmailsAndDifferentCreditCard()
+    public async Task ShouldDetectedFraudulentOperationsRequiredDiferentsEmailsAndDifferentCreditCard()
     {
 
         //Arrange
@@ -57,7 +57,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -67,7 +67,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredDiferentsAddresAndDifferentCreditCard()
+    public async Task ShouldDetectedFraudulentOperationsRequiredDiferentsAddresAndDifferentCreditCard()
     {
 
         //Arrange
@@ -79,7 +79,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -89,7 +89,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredDiferentsAddresAndEmailAndDifferentCreditCard()
+    public async Task ShouldDetectedFraudulentOperationsRequiredDiferentsAddresAndEmailAndDifferentCreditCard()
     {
 
         //Arrange
@@ -103,7 +103,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -113,7 +113,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredDiferentsAddresAndEmailAndDifferentCreditCardAndInvalidLine()
+    public async Task ShouldDetectedFraudulentOperationsRequiredDiferentsAddresAndEmailAndDifferentCreditCardAndInvalidLine()
     {
 
         //Arrange
@@ -129,7 +129,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -139,7 +139,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredBadEmail()
+    public async Task ShouldDetectedFraudulentOperationsRequiredBadEmail()
     {
 
         //Arrange
@@ -149,7 +149,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -159,7 +159,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredDifferentCreditCardDifferentEmailAddressTheSame()
+    public async Task ShouldDetectedFraudulentOperationsRequiredDifferentCreditCardDifferentEmailAddressTheSame()
     {
 
         //Arrange
@@ -172,7 +172,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
@@ -182,7 +182,7 @@ public class FraudDetectionUseCaseTest
     }
 
     [Fact]
-    public void ShouldDetectedFraudulentOperationsRequiredDifferentCreditCardDifferentAddresEmailTheSame()
+    public async Task ShouldDetectedFraudulentOperationsRequiredDifferentCreditCardDifferentAddresEmailTheSame()
     {
 
         //Arrange
@@ -194,7 +194,7 @@ public class FraudDetectionUseCaseTest
         ];
 
         //Act
-        _sut.ExecuteFraudDetection(inlinesOrders);
+        await _sut.ExecuteFraudDetectionAsync(inlinesOrders);
         IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
         IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
