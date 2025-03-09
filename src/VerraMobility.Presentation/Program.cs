@@ -35,16 +35,19 @@ IHost host = ConfigHost.CreateIocInHost(servicesHost);
 ExecuteUseCase.Initialize(host.Services);
 
 await ExecuteUseCase.ExecuteWordlist();
-
-await ExecuteUseCase.ExecuteFraudDetection(
-    new List<string> 
-    {
-        "3",
-        "1,1,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
-        "2,1,elmer@fudd.com,123 Sesame St.,New York,NY,10011,10987654321",
-        "3,2,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
-    }
-);
+if (args.Length == 0)
+{
+    await ExecuteUseCase.ExecuteFraudDetection(
+        [
+            "3",
+            "1,1,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
+            "2,1,elmer@fudd.com,123 Sesame St.,New York,NY,10011,10987654321",
+            "3,2,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
+        ]
+    );
+}
+else
+    await ExecuteUseCase.ExecuteFraudDetection(args.ToList());
 
 await host.StopAsync();
 await host.WaitForShutdownAsync();
