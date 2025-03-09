@@ -7,7 +7,6 @@ using Prueba1.Repository.Models.Context;
 using Prueba1.Repository.Models.EntitiesRepository;
 using Prueba1.Repository.Repositories;
 using Prueba1.Repository.Services;
-using Prueba2.Application.Models;
 using Prueba2.Application.UseCases;
 
 namespace Prueba2.Application.Test;

@@ -41,7 +41,7 @@ ExecuteUseCase.ExecutePrueba2(
     {
         "3",
         "1,1,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
-        "22,1,elmer@fudd.com,123 Sesame St.,New York,NY,10011,10987654321",
+        "2,1,elmer@fudd.com,123 Sesame St.,New York,NY,10011,10987654321",
         "3,2,bugs@bunny.com,123 Sesame St.,New York,NY,10011,12345689010",
     }
 );

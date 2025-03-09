@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Prueba2.Application.Contracts;
 using Prueba2.Application.Mappers;
-using Prueba2.Application.Models;
+using Prueba2.Domain.Contracts;
 using Prueba2.Domain.Entities;
-using Prueba2.Domain.Service;
 
 namespace Prueba2.Application.UseCases;
 
@@ -11,19 +10,19 @@ public class UseCase2 : IUseCase2
 {
     //IResultado2Repository _resultado2Repository;
     //IUnitOfWorkRepository _unitOfWorkRepository;
-    Services.IOrderService _orderServiceDto;
+    IOrderService _orderService;
     IOrderComparerService _orderComparerService;
     ILogger<UseCase2> _logger;
 
     public UseCase2(
-        Services.IOrderService orderServiceDto,
-        IOrderComparerService orderComparerService,
-        ILogger<UseCase2> logger)
+        ILogger<UseCase2> logger,
+        IOrderService orderService,
+        IOrderComparerService orderComparerService)
         //IUnitOfWorkRepository unitOfWorkRepository,
         //IResultado2Repository resultado2Repository)
     {
         _logger = logger;
-        _orderServiceDto = orderServiceDto;
+        _orderService = orderService;
         _orderComparerService = orderComparerService;
         //_resultado2Repository = resultado2Repository;
         //_unitOfWorkRepository = unitOfWorkRepository;
@@ -31,14 +30,19 @@ public class UseCase2 : IUseCase2
 
     public void ExecutePrueba2(IEnumerable<string> inlineOrders)
     {
-        _orderServiceDto.LoadLineOrderToObject(inlineOrders);
-        IEnumerable<OrderDto> ordersToProccess = _orderServiceDto.GetOrdersToVerifyDomain();
-        IEnumerable<Order> orders = Mapper_OrderLineDto_Domain.MapToDomain(ordersToProccess);
-        _orderComparerService.EqualEmailIdDealsDifferentCreditsCards(orders);
-        _orderComparerService.EqualAddressIdDealsDifferentCreditsCards(orders);
-        IEnumerable<int> fraudulentsOrderIds = _orderServiceDto.GetInvalidOrdersId(orders);
+        IEnumerable<Order> allOrders = Mapper_InlineOrder_Domain.MapToDomain(inlineOrders);
+        _orderService.LoadOrders(allOrders);
+        IEnumerable<Order> ordersValidToProcess = _orderService.GetOrdersValids();
+        _orderComparerService.FraudulentCreditCardByAddressIdDeal(ref ordersValidToProcess);
+        _orderComparerService.FraudulentCreditCardByEmailIdDeal(ref ordersValidToProcess);
+        IEnumerable<int> incompletedOrderIds = _orderService.GetIncompletedOrdersIdAscendant();
+        IEnumerable<int> fraudulentsOrderIds = _orderService.GetInvalidOrdersIdAscendant();
 
-        _logger.LogInformation(string.Join(", ",fraudulentsOrderIds));
+        Console.WriteLine($"\n#############Exercise two############");
+        Console.WriteLine($"Incompleted => {string.Join(", ", incompletedOrderIds)}");
+        Console.WriteLine($"Fraudulents => {string.Join(", ", fraudulentsOrderIds)}");
+        //_logger.LogInformation(string.Join(", ", incompletedOrderIds));
+        //_logger.LogInformation(string.Join(", ",fraudulentsOrderIds));
         
         //Resultado2 resultado = Mapper_Resultado2Repository_Domain.MapToRepository(entity);
         //_resultado2Repository.CreateResultado(resultado);

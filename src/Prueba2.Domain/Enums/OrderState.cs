@@ -3,5 +3,6 @@
 public enum OrderState
 {
     Valid,
+    Incompleted,
     NotValid
 }

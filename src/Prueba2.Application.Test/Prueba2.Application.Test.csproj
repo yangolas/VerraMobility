@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Prueba1.Repository\Prueba1.Repository.csproj" />
-    <ProjectReference Include="..\Prueba2.Application.Models\Prueba2.Application.Models.csproj" />
     <ProjectReference Include="..\Prueba2.Application\Prueba2.Application.csproj" />
   </ItemGroup>
 

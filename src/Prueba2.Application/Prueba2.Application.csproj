@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Prueba1.Repository.Contracts\Prueba1.Repository.Contracts.csproj" />
     <ProjectReference Include="..\Prueba2.Application.Contracts\Prueba2.Application.Contracts.csproj" />
-    <ProjectReference Include="..\Prueba2.Application.Models\Prueba2.Application.Models.csproj" />
     <ProjectReference Include="..\Prueba2.Domain\Prueba2.Domain.csproj" />
   </ItemGroup>
 

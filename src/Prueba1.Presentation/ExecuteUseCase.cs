@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Prueba1.Application.Contracts;
-using Prueba1.Application.Model;
 using Prueba2.Application.Contracts;
-using Prueba2.Application.Models;
 
 namespace Prueba1.Presentation;
 

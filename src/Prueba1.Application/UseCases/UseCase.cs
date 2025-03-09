@@ -46,8 +46,7 @@ public class UseCase : IUseCase
         //await _unitOfWorkRepository.SaveChangesAsync();
         ////Esto lo hago ! porque se con seguridad de que existe en bd la entity de repositorio que he insertado dos lineas arriba
         //Resultado responseDb = (await _resultadoRepository.GetByIdsync(resultado.Id))!;
-
-        _logger.LogInformation($"Found words:{string.Join("\n", wordsValid)}");
-
+        Console.WriteLine($"#############Exercise one############");
+        Console.WriteLine($"Found words:{string.Join("\n", wordsValid)}");
     }
 }
