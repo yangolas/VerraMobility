@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VerraMobility.FraudDetection.Application\VerraMobility.FraudDetection.Application.csproj" />
+    <ProjectReference Include="..\VerraMobility.FraudDetection.Domain\VerraMobility.FraudDetection.Domain.csproj" />
+    <ProjectReference Include="..\VerraMobility.Infraestructure.ReaderFiles\VerraMobility.Infraestructure.ReaderFiles.csproj" />
+    <ProjectReference Include="..\VerraMobility.Infraestructure.Repository\VerraMobility.Infraestructure.Repository.csproj" />
+    <ProjectReference Include="..\VerraMobility.Shared.Settings\VerraMobility.Shared.Settings.csproj" />
+    <ProjectReference Include="..\VerraMobility.Wordlist.Application\VerraMobility.Wordlist.Application.csproj" />
+    <ProjectReference Include="..\VerraMobility.Wordlist.Domain\VerraMobility.Wordlist.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
