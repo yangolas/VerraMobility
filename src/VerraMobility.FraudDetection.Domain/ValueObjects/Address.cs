@@ -3,7 +3,7 @@ using VerraMobility.FraudDetection.Domain.Enums;
 
 namespace VerraMobility.FraudDetection.Domain.ValueObjects;
 
-public record struct Address
+public struct Address
 {
     public string Street { get; private set; } = null!;
     public string City { get; private set; } = null!;
