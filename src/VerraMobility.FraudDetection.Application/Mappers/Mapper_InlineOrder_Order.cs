@@ -16,9 +16,14 @@ public static class Mapper_InlineOrder_Order
                 string[] fields = inline.Split(',');
                 if (fields.Length != 8)
                 {
-                    localOrders.Add(new Order(
-                        orderId: int.Parse(fields[0])
-                    ));
+                    if (int.TryParse(fields[0], out int orderId))
+                    {
+                        localOrders.Add(new Order(
+                            orderId: orderId
+                        ));
+                    }
+                    else
+                        continue;
                 }
                 else
                 {

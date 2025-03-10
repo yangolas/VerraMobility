@@ -16,7 +16,7 @@ public class OrderComparerService : IOrderComparerService
         {
             foreach (var order in groupFraudulentOrder)
             {
-                order.OrderState = OrderState.NotValid;
+                order.SetOrderState(OrderState.NotValid);
             }
         }
     }
@@ -31,7 +31,7 @@ public class OrderComparerService : IOrderComparerService
         {
             foreach (var order in groupFraudulentOrder)
             {
-                order.OrderState = OrderState.NotValid;
+                order.SetOrderState(OrderState.NotValid);
             }
         }
     }

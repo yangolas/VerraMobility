@@ -5,12 +5,13 @@ namespace VerraMobility.FraudDetection.Domain.Entities;
 
 public class Order
 {
-    public int OrderId { get; set; }
-    public int DealId { get; set; }
-    public string Email { get; set; } = null!;
-    public Address Address { get; set; }
-    public double CreditCard { get; set; }
-    public OrderState OrderState { get; set; }
+    private static readonly string _incompletedState = $"Ey, Developer, the {nameof(Order)} is in state: {OrderState.Incompleted}, you can´t modify";
+    public int OrderId { get; private set; }
+    public int DealId { get; private set; }
+    public string Email { get; private set; } = null!;
+    public Address Address { get; private set; }
+    public double CreditCard { get; private set; }
+    public OrderState OrderState { get; private set; }
 
     public Order(int orderId)
     {
@@ -37,33 +38,44 @@ public class Order
     }
     public void SetOrderId(int orderId)
     {
+        CheckIfOrderIsInvalidState();
         VerifyIntInitialize(orderId);
         OrderId = orderId;
     }
 
     public void SetDealId(int dealId)
     {
+        CheckIfOrderIsInvalidState();
         VerifyIntInitialize(dealId);
         DealId = dealId;
     }
 
     public void SetEmail(string email)
     {
+        CheckIfOrderIsInvalidState();
         NormalizeEmail(ref email);
         Email = email;
     }
 
     public void SetAdress(Address address)
     {
+        CheckIfOrderIsInvalidState();
         VerifyAdress(address);
         Address = address;
     }
 
     public void SetCreditCard(double creditCard)
     {
+        CheckIfOrderIsInvalidState();
         //A este le falta verificacion pero como no se dice nada...
         VerifyDoubleInitialize(creditCard);
         CreditCard = creditCard;
+    }
+
+    public void SetOrderState(OrderState orderState)
+    {
+        CheckIfOrderIsInvalidState();
+        OrderState = orderState;
     }
 
     private void VerifyIntInitialize(int id)
@@ -106,5 +118,12 @@ public class Order
         username = username.Replace(".", "");
 
         email = $"{username}@{domain}";
+    }
+
+    private void CheckIfOrderIsInvalidState() 
+    {
+        if (OrderState == OrderState.Incompleted)
+            throw new ArgumentException(_incompletedState);
+
     }
 }

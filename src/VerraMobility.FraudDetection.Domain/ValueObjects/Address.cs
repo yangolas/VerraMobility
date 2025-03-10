@@ -5,11 +5,11 @@ namespace VerraMobility.FraudDetection.Domain.ValueObjects;
 
 public record struct Address
 {
-    public string Street { get; set; } = null!;
-    public string City { get; set; } = null!;
-    public string State { get; set; } = null!;
-    public int ZipCode { get; set; }
-    public StatusAdress StatusAdress { get; set; }
+    public string Street { get; private set; } = null!;
+    public string City { get; private set; } = null!;
+    public string State { get; private set; } = null!;
+    public int ZipCode { get; private set; }
+    public StatusAdress StatusAdress { get; private set; }
 
     public Address(
         string street,
@@ -23,25 +23,25 @@ public record struct Address
         SetZipCode(zipCode);
     }
 
-    public void SetStreet(string street)
+    private void SetStreet(string street)
     {
         NormalizeStreet(ref street);
         Street = street;
     }
 
-    public void SetCity(string city)
+    private void SetCity(string city)
     {
         NormalizeCity(ref city);
         City = city;
     }
 
-    public void SetState(string state)
+    private void SetState(string state)
     {
         NormalizeState(ref state);
         State = state;
     }
 
-    public void SetZipCode(int zipCode)
+    private void SetZipCode(int zipCode)
     {
         VerifyZipCodeGratherThanZero(zipCode);
         ZipCode = zipCode;

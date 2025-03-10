@@ -2,8 +2,8 @@
 
 public record class WordValid
 {
-    public string WordFirst { get; set; }
-    public string WordSecond { get; set; }
+    public string WordFirst { get; private set; }
+    public string WordSecond { get; private set; }
 
     public WordValid(
         string wordFirst,
